@@ -63,6 +63,9 @@ class GroupsController < ApplicationController
     end
   end
 
+  def manager
+  end
+
   def members
     @project = group.projects.find(params[:project_id]) if params[:project_id]
     @members = group.group_members

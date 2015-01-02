@@ -15,6 +15,9 @@
       Merge Requests
       - if current_user
         %span.count= current_user.cared_merge_requests.opened.of_group(@group).count
+  - if @group.name == 'Labs'
+    = nav_link(path: 'groups#manager') do
+      = link_to "Manager", "/groups/labs/manager", data: { no_turbolink: true }
   = nav_link(path: 'groups#members') do
     = link_to "Members", members_group_path(@group)
 
