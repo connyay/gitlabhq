@@ -8,6 +8,7 @@ Gitlab::Application.routes.draw do
   get 'search' => "search#show"
   get 'search/autocomplete' => "search#autocomplete", as: :search_autocomplete
 
+  get '/manage(/*path)' => "manager#index", :trailing_slash => true
   # API
   API::API.logger Rails.logger
   mount API::API => '/api'
